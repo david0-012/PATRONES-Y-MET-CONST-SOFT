@@ -20,12 +20,18 @@ from .views import inicio, resumen
 from django.urls import re_path
 from django.views.static import serve
 from django.conf import settings
+from django.conf.urls.static import static
 from . import views
+from django.contrib.auth import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path("", inicio),
     path("inicio/", inicio, name="inicio"),
+    path("", include('aplicaciones.recycle_tips.urls')),
     path("", include('aplicaciones.ubicaciones.urls')),
+    path("", include('aplicaciones.blogs.urls')),
     
-]
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

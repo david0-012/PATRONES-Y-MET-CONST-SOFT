@@ -11751,7 +11751,7 @@ html {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(to right, #2659BF, #FFC0CB); /* Cambia estos colores al degradado que desees */
+    background: linear-gradient(to right, #000, #6CF091); /* Cambia estos colores al degradado que desees */
     border-radius: 10px;
 }
 
@@ -11759,7 +11759,7 @@ html {
 .subtext-style {
   /* Estilos para el texto después de los subtítulos */
   color: #666;
-  font-style: italic;
+  font-style: normal;
   margin-left: 10px; /* Añade un margen a la izquierda para separar el texto del subtítulo */
   display: inline-block; /* Permite que el texto se alinee verticalmente */
   position: relative;
@@ -11773,7 +11773,7 @@ html {
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, #2659BF, #FFC0CB); /* degradado */
+  background: linear-gradient(to right, #000, #6CF091); /* degradado */
   border-radius: 2px;
   transform: scaleX(0); /* Inicialmente, la línea está oculta */
   transition: transform 0.3s ease-in-out; /* Agrega una transición suave */

@@ -8,13 +8,13 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-4">
-            <h2 class="mb-4 text-primary">Explora Puntos de Reciclaje</h2>
+            <h2 class="mb-4 text-success">Explora Puntos de Reciclaje</h2>
             <p class="lead">Descubre los lugares donde puedes reciclar y contribuir al cuidado del medio ambiente.</p>
 
             <ul class="list-group">
                 {% for location in locations %}
                     <li class="list-group-item">
-                        <h5 class="mb-2 text-info">{{ location.name }}</h5>
+                        <h5 class="mb-2 text-primary">{{ location.name }}</h5>
                         <p class="text-muted">{{ location.address }}</p>
                     </li>
                 {% endfor %}

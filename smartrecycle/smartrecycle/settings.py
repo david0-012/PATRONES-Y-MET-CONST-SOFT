@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'coreapi',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'aplicaciones.ubicaciones',
+    'aplicaciones.blogs',
+    'aplicaciones.recycle_tips',
+    
 ]
 
 MIDDLEWARE = [
@@ -69,7 +74,7 @@ TEMPLATES = [
         },
     },
 ]
-
+TEMPLATES[0]['OPTIONS']['context_processors'].append('aplicaciones.blogs.context_processors.categories_processor')
 WSGI_APPLICATION = 'smartrecycle.wsgi.application'
 
 
@@ -106,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-ar'
+LANGUAGE_CODE = 'es-co'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
@@ -119,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR/ 'media'
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 
@@ -126,3 +134,15 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
+#crsispy templates
+
+CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+#Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
