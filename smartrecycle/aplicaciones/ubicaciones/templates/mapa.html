@@ -7,24 +7,48 @@
 {% block content %}
 <div class="container mt-5">
     <div class="row">
+        <div class="col-md-8">
+            <h2 class="mb-4 text-success">Mapa de Puntos de Reciclaje</h2>
+            {{ map|safe }}
+        </div>  
+
         <div class="col-md-4">
             <h2 class="mb-4 text-success">Explora Puntos de Reciclaje</h2>
             <p class="lead">Descubre los lugares donde puedes reciclar y contribuir al cuidado del medio ambiente.</p>
 
             <ul class="list-group">
-                {% for location in locations %}
+                {% for location in page_obj %} <!-- Usa page_obj en lugar de locations -->
                     <li class="list-group-item">
                         <h5 class="mb-2 text-primary">{{ location.name }}</h5>
                         <p class="text-muted">{{ location.address }}</p>
                     </li>
                 {% endfor %}
             </ul>
+
+            <div class="d-flex justify-content-center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <!-- <li class="page-item"><a class="page-link" href="?page=1">Primera</a></li> -->
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a></li>
+                        {% endif %}
+            
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">
+                                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+                            </a>
+                        </li>
+            
+                        {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a></li>
+                            <!-- <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Última</a></li> -->
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
         </div>
 
-        <div class="col-md-8">
-            <h2 class="mb-4 text-success">Mapa de Puntos de Reciclaje</h2>
-            {{ map|safe }}
-        </div>
+        
     </div>
 </div>
 {% endblock %}

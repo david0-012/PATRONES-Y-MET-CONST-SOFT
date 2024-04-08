@@ -11574,20 +11574,22 @@ html {
 
 .profile {
   position: relative;
-  height: 75vw;
-  width: 75vw;
+  height: 50vw; 
+  width: 50vw; 
   border-radius: 5vw;
   margin-top: 5vw;
-  max-height: 40rem;
-  max-width: 40rem;
+  max-height: 25rem;
+  max-width: 25rem; 
+  overflow: hidden;
 }
 .profile .profile-img {
-  height: 80vw;
-  max-height: 45rem;
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  height: 70%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
 .profile .dots-1 {
   position: absolute;
@@ -11793,4 +11795,45 @@ html {
 .profile-img {
   width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
   height: auto;
+}
+
+
+.cardtips {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  width: 150%; /* Ajusta el ancho aquí */
+  height: auto; /* Ajusta el alto aquí */
+  word-wrap: break-word;
+  background-color: var(--bs-card-bg);
+  background-clip: border-box;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: var(--bs-card-border-radius);
+  padding: 1rem; /* Añade un espacio alrededor del contenido de la tarjeta */
+}
+
+.cardtips .d-flex {
+  flex-direction: column;
+}
+
+.cardtips img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem; /* Añade un espacio debajo de la imagen */
+}
+
+@media (min-width: 768px) {
+  .cardtips .d-flex {
+    flex-direction: row;
+  }
+  .cardtips img {
+    width: 40%; /* Ajusta el ancho de la imagen aquí */
+    height: auto;
+    margin-left: 1rem; /* Añade un espacio a la izquierda de la imagen */
+    margin-bottom: 0; /* Elimina el espacio debajo de la imagen */
+  }
 }
