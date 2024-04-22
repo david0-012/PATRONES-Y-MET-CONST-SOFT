@@ -13,6 +13,14 @@
                 <div class="w-100 m-auto text-center">
                     
                     <h1>Registro Exitoso</h1>
+
+                    <!-- Agrega esto donde quieras que se muestren los mensajes -->
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
                     <a class="btn btn-outline-primary mb-5" href="{% url 'login' %}" role="button">Sign In</a>
                 </div>
             </div>

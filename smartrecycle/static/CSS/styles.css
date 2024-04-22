@@ -11837,3 +11837,26 @@ html {
     margin-bottom: 0; /* Elimina el espacio debajo de la imagen */
   }
 }
+
+ul.messages {
+  list-style-type: none; /* Elimina el punto de la lista */
+  padding: 0;
+}
+
+ul.messages li.success {
+  background-color: #d4edda; /* Fondo verde para mensajes de éxito */
+  color: #155724; /* Texto verde oscuro para mensajes de éxito */
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+ul.messages li.error {
+  background-color: #f8d7da; /* Fondo rojo para mensajes de error */
+  color: #721c24; /* Texto rojo oscuro para mensajes de error */
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}

@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Activate your blog account.
+From: webmaster@localhost
+To: juanitocasallas36@gmail.com
+Date: Sun, 14 Apr 2024 20:08:29 -0000
+Message-ID: <171312530993.1440.14550265279108916653@PC-MESA-JUAN>
+
+<h2>Hola juanita,</h2>
+<p>Gracias por registrarte en nuestro sitio web. Por favor, haz clic en el enlace de abajo para verificar tu cuenta:</p>
+<a href="http://127.0.0.1:8000/verify/Nw/c5hbe5-94d73618c3643cfd08dc5318f9e842d9/">Verificar mi cuenta</a>
+<p>Si no te has registrado en nuestro sitio web, por favor, ignora este correo electrónico.</p>
+-------------------------------------------------------------------------------
