@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'aplicaciones.ubicaciones',
     'aplicaciones.blogs',
     'aplicaciones.recycle_tips',
-    
+    'aplicaciones.reportes',
 ]
 
 MIDDLEWARE = [

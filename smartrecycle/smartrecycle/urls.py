@@ -32,6 +32,7 @@ urlpatterns = [
     path("", include('aplicaciones.recycle_tips.urls')),
     path("", include('aplicaciones.ubicaciones.urls')),
     path("", include('aplicaciones.blogs.urls')),
+    path("", include('aplicaciones.reportes.urls')),
     
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
