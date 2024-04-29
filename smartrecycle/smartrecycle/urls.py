@@ -33,6 +33,7 @@ urlpatterns = [
     path("", include('aplicaciones.ubicaciones.urls')),
     path("", include('aplicaciones.blogs.urls')),
     path("", include('aplicaciones.reportes.urls')),
+    path("", include('aplicaciones.users.urls')),
     
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
