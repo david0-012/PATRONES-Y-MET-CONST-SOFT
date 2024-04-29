@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block title %}Tips{% endblock %}
+
+{% block content %}
+ 
+<body>
+
+    <h1 class="pb-4 mb-4 fst-italic border-bottom">Reportes</h1>
+
+        <div class="form-report">
+
+            <form action="", class="formulario_contacto", method="post"> <!--Los datos se envian a views.py-->
+
+                {% csrf_token %} <!--Token de seguridad-->
+
+                {{form}} <!--Imprime el formulario, convierte el codigo python a HTML-->
+
+                <br>
+
+                <button type="submit" class="btn btn-primary">Generar Reporte</button>
+
+            </form>
+
+        </div>
+
+    <br>
+
+    <h3> {{mensaje}} </h3>
+
+</body>
+</html>
+
+{% endblock %}
