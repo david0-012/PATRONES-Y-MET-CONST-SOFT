@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'aplicaciones.blogs',
     'aplicaciones.recycle_tips',
     'aplicaciones.reportes',
+    'aplicaciones.users',
 ]
 
 MIDDLEWARE = [

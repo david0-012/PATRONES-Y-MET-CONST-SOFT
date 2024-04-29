@@ -1,4 +1,4 @@
 Hola {{ user.username }}
 Gracias por registrarte en nuestro sitio web. Por favor, haz clic en el enlace de abajo para verificar tu cuenta:
-http://{{ domain }}{% url 'blogs:account_verification' uidb64=uid token=token %}"
+http://{{ domain }}{% url 'users:account_verification' uidb64=uid token=token %}"
 Si no te has registrado en nuestro sitio web, por favor, ignora este correo electrónico.
