@@ -188,7 +188,7 @@ input, textarea, select{
 .error{
   font-size: 50px;
   font-weight: 500;
-  margin: 20px;
+  w;
   padding: 5px;
   text-align: center;
   color: var(--bs-red);
