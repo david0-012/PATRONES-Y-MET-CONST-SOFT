@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 :root {
-  --bs-blue: #1e30f3;
+  --bs-blue: #f31e1e;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #e21e80;
@@ -154,10 +154,67 @@ h6, .h6 {
   font-size: 1rem;
 }
 
-form {
+form{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+label{
+  font-size: large;
+}
+input, textarea, select{
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid #575757;
+}
+.reportes-title{
+    font-size: 50px;
+    font-weight: 500;
+    margin: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.success{
+  font-size: 50px;
+  font-weight: 500;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+  color: var(--bs-green);
+}
+.error{
+  font-size: 50px;
+  font-weight: 500;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+  color: var(--bs-red);
+}
+
+.form-report{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.generar-reporte{
+margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #d50c0c;
+  color: var(--bs-white);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 1s
+}
+.generar-reporte:hover{
+  background-color: #7c1c1c;
 }
 
 p {

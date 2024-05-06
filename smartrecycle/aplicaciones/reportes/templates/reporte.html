@@ -8,27 +8,44 @@
  
 <body>
 
-    <h1 class="pb-4 mb-4 fst-italic border-bottom">Reportes</h1>
+<h1 class="reportes-title">Reportes</h1>
 
-        <div class="form-report">
+<div class="form-report">
 
-            <form action="", class="formulario_contacto", method="post"> <!--Los datos se envian a views.py-->
+    <h3 class="{{ mensaje_clase }}"> {{mensaje}} </h3>
+
+    <form action="" class="formulario_contacto" method="post"> <!--Los datos se envian a views.py-->
 
                 {% csrf_token %} <!--Token de seguridad-->
-
-                {{form}} <!--Imprime el formulario, convierte el codigo python a HTML-->
-
+                <label for="nombre">Nombre:</label>
                 <br>
-
-                <button type="submit" class="btn btn-primary">Generar Reporte</button>
-
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                <br>
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" id="email" name="email" placeholder="Email">
+                <br>
+                <label for="consulta">Consulta:</label>
+                <br>
+                <select id="consulta" name="consulta">
+                    <option value="0">Consulta</option>
+                    <option value="1">Reclamo</option>
+                    <option value="2">Sugerencia</option>
+                    <option value="3">Error</option>
+                    <option value="4">Otro</option>
+                </select>
+                <br>
+                <label for="mensaje">Mensaje:</label>
+                <br>
+                <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+                <br>
+                <input class="generar-reporte" type="submit" value="Generar Reporte">
             </form>
 
         </div>
 
     <br>
 
-    <h3> {{mensaje}} </h3>
 
 </body>
 </html>

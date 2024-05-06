@@ -4,7 +4,8 @@ opciones_consulta = [
     [0, "Consulta"],
     [1, "Reclamo"],
     [2, "Sugerencia"],
-    [4, "Otro"]
+    [3, "Error"],
+    [4, "Otro"],
 ]
 
 # Create your models here.
