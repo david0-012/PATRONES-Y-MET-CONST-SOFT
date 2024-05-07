@@ -54,13 +54,13 @@ class AccountVerification(View):
             if default_token_generator.check_token(user, token):
                 user.is_active = True
                 user.save()
-                messages.success(request, 'Tu cuenta ha sido activada exitosamente, ahora puedes iniciar sesión')
+                messages.success(request, 'Tu cuenta ha sido activada exitosamente, ahora puedes iniciar sesión', extra_tags='activacion_cuenta')
                 return redirect('login')
             else:
-                messages.error(request, 'El enlace de activación es inválido')
+                messages.error(request, 'El enlace de activación es inválido', extra_tags='error_activacion')
                 return redirect('login')
         except(TypeError, ValueError, OverflowError, UserModel.DoesNotExist):
-            messages.error(request, 'El enlace de activación es inválido')
+            messages.error(request, 'El enlace de activación es inválido', extra_tags='error_activacion')
             return redirect('login')    
 class LoginView(AuthLoginView):
     def get(self, request, *args, **kwargs):

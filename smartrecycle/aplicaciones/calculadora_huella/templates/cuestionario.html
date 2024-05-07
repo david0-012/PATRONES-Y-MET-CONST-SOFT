@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <h1>{{ pregunta.texto }}</h1>
+    {% for opcion in pregunta.opcion_set.all %}
+        <input type="radio" name="opcion" value="{{ opcion.id }}" required>
+        <label>{{ opcion.texto }}</label><br>
+    {% endfor %}
+    <input type="submit" value="Siguiente">
+</form>

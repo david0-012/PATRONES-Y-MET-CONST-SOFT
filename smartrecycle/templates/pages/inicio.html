@@ -2,6 +2,16 @@
 {% load static %}
 {% block title %}Pagina de inicio {% endblock %}
 {% block content %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        {% if 'borrar_intentos' in message.tags %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
 <main class="flex-shrink-0">
     <header class="py-5">
         <div class="container px-5 pb-5">

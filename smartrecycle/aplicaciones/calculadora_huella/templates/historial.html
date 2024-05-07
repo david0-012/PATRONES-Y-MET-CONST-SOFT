@@ -1,0 +1,12 @@
+<h1>Historial de puntajes</h1>
+
+<ul>
+{% for puntaje in puntajes %}
+    <li>{{ puntaje }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'inicio' %}">Volver al inicio</a>
+
+<!-- Botón para borrar intentos -->
+<a href="{% url 'borrar_intentos' %}" onclick="return confirm('¿Estás seguro de que quieres borrar todos tus intentos?');">Borrar todos mis intentos</a>

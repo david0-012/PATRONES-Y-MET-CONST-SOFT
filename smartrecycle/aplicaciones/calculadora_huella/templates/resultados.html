@@ -1,0 +1,24 @@
+<h1>Resultado</h1>
+
+<h2>Intento: {{ numero_de_intento }}</h2>
+
+<h2>{{ mejora }}</h2>
+
+<h1>Tu resultado total es: {{ total }}</h1>
+
+{% if total_anterior %}
+    <h2>Tu resultado anterior fue: {{ total_anterior }}</h2>
+{% endif %}
+
+<h2>Consejos para reducir tu huella ambiental</h2>
+<ul>
+{% for consejo in consejos %}
+    <li>{{ consejo }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'inicio' %}">Volver al inicio</a>
+<a href="{% url 'cuestionario_inicio' %}">Hacer otro intento</a>
+{% if numero_de_intento > 0 %}
+    <a href="{% url 'historial' %}">Ver historial</a>
+{% endif %}
