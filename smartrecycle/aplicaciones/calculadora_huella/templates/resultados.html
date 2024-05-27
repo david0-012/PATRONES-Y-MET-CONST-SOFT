@@ -1,24 +1,81 @@
-<h1>Resultado</h1>
+{% extends "layouts/base.html" %}
 
-<h2>Intento: {{ numero_de_intento }}</h2>
+{% load static %}
 
-<h2>{{ mejora }}</h2>
+{% block title %}Tips{% endblock %}
 
-<h1>Tu resultado total es: {{ total }}</h1>
+{% block content %}
 
-{% if total_anterior %}
-    <h2>Tu resultado anterior fue: {{ total_anterior }}</h2>
-{% endif %}
+<style>
+    /* Estilos personalizados */
+    .intento-title {
+        color: green; /* Color verde para el texto "Intento" */
+    }
 
-<h2>Consejos para reducir tu huella ambiental</h2>
-<ul>
-{% for consejo in consejos %}
-    <li>{{ consejo }}</li>
-{% endfor %}
-</ul>
+    /* Margen superior para la sección de consejos */
+    .consejos-section {
+        margin-top: 20px;
+        background-color: white; /* Fondo blanco */
+        padding: 20px; /* Añadir relleno */
+        border-radius: 10px; /* Bordes redondeados */
+    }
 
-<a href="{% url 'inicio' %}">Volver al inicio</a>
-<a href="{% url 'cuestionario_inicio' %}">Hacer otro intento</a>
-{% if numero_de_intento > 0 %}
-    <a href="{% url 'historial' %}">Ver historial</a>
-{% endif %}
+    /* Estilo para los botones */
+    .boton {
+        margin-top: 20px; /* Espacio superior para los botones */
+    }
+
+    /* Estilo para evitar que el espacio superior se vea verde */
+    .container-fluid {
+        background-color: transparent !important; /* Fondo transparente */
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="display-4 mb-4">Resultado</h1>
+
+            <!-- Aquí se aplica la clase "intento-title" para cambiar el color del texto -->
+            <h2 class="h5 mb-4 intento-title">Intento: {{ numero_de_intento }}</h2>
+
+            <p class="mb-4">{{ mejora }}</p>
+
+            <h1 class="display-4 mb-4">Tu resultado total es: {{ total }}</h1>
+
+            {% if total_anterior %}
+                <h2 class="h5 mb-4">Tu resultado anterior fue: {{ total_anterior }}</h2>
+            {% endif %}
+
+            <!-- Sección de consejos con el mismo fondo que la sección "Reciclar es vida para mí y para el planeta" -->
+            <section class="py-5 bg-gradient-primary-to-secondary text-white consejos-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="h4 mb-4">Consejos para reducir tu huella ambiental</h2>
+                            <ul class="list-group mb-4">
+                                {% for consejo in consejos %}
+                                    <li class="list-group-item">{{ consejo }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fin de la sección de consejos -->
+
+            <!-- Botones con margen superior -->
+            <div class="mt-4">
+                <a href="{% url 'inicio' %}" class="btn btn-primary me-3 boton">Volver al inicio</a>
+                <a href="{% url 'cuestionario_inicio' %}" class="btn btn-secondary me-3 boton">Hacer otro intento</a>
+                {% if numero_de_intento > 0 %}
+                    <a href="{% url 'historial' %}" class="btn btn-info boton">Ver historial</a>
+                {% endif %}
+            </div>
+            <!-- Fin de los botones -->
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
