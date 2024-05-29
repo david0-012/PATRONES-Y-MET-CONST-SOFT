@@ -1,47 +1,12 @@
-{% extends "layouts/base.html" %}
+<h1>Historial de puntajes</h1>
 
-{% load static %}
+<ul>
+{% for puntaje in puntajes %}
+    <li>{{ puntaje }}</li>
+{% endfor %}
+</ul>
 
-{% block title %}Hisotrial{% endblock %}
+<a href="{% url 'inicio' %}">Volver al inicio</a>
 
-{% block content %}
- 
-<body class="d-flex flex-column min-vh-100 bg-light">
-    <main class="flex-shrink-0">
-        <section class="py-5 d-flex justify-content-center align-items-center">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Historial</span></h1>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        
-                    <!-- Tu código de bucle for para los puntajes -->
-                    <ul class="list-group">
-                    {% for puntaje in puntajes %}
-                        <li class="list-group-item">{{ puntaje }}</li>
-                    {% endfor %}
-                    </ul>
-                    <!-- Fin del bucle for -->
-
-                    <a href="{% url 'inicio' %}" class="btn btn-primary mt-3">Volver al inicio</a>
-
-                    <!-- Botón para borrar intentos -->
-                    <a href="{% url 'borrar_intentos' %}" class="btn btn-danger mt-3" onclick="return confirm('¿Estás seguro de que quieres borrar todos tus intentos?');">Borrar todos mis intentos</a>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Sección de llamada a la acción -->
-        <section class="py-5 bg-gradient-primary-to-secondary text-white">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="display-4 fw-bolder mb-4">Reciclar es vida para mí y para el planeta</h2>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-
-{% endblock %}
+<!-- Botón para borrar intentos -->
+<a href="{% url 'borrar_intentos' %}" onclick="return confirm('¿Estás seguro de que quieres borrar todos tus intentos?');">Borrar todos mis intentos</a>

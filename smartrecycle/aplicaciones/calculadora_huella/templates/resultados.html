@@ -1,25 +1,23 @@
-{% extends "layouts/base.html" %}
+<h1>Resultado</h1>
 
-{% load static %}
+<h2>Intento: {{ numero_de_intento }}</h2>
 
-{% block title %}Tips{% endblock %}
+<h2>{{ mejora }}</h2>
 
-{% block content %}
+<h1>Tu resultado total es: {{ total }}</h1>
 
-<style>
-    /* Estilos personalizados */
-    .intento-title {
-        color: green; /* Color verde para el texto "Intento" */
-    }
+{% if total_anterior %}
+    <h2>Tu resultado anterior fue: {{ total_anterior }}</h2>
+{% endif %}
 
-    /* Margen superior para la sección de consejos */
-    .consejos-section {
-        margin-top: 20px;
-        background-color: white; /* Fondo blanco */
-        padding: 20px; /* Añadir relleno */
-        border-radius: 10px; /* Bordes redondeados */
-    }
+<h2>Consejos para reducir tu huella ambiental</h2>
+<ul>
+{% for consejo in consejos %}
+    <li>{{ consejo }}</li>
+{% endfor %}
+</ul>
 
+<<<<<<< HEAD
     /* Estilo para los botones */
     .boton {
         margin-top: 20px; /* Espacio superior para los botones */
@@ -79,3 +77,10 @@
 </div>
 
 {% endblock %}
+=======
+<a href="{% url 'inicio' %}">Volver al inicio</a>
+<a href="{% url 'cuestionario_inicio' %}">Hacer otro intento</a>
+{% if numero_de_intento > 0 %}
+    <a href="{% url 'historial' %}">Ver historial</a>
+{% endif %}
+>>>>>>> parent of b489777 (Front Huella)

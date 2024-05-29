@@ -13,8 +13,6 @@
                 <li class="nav-item"><a class="nav-link subtext-style" href="{% url 'tips' %}">Tips</a></li>            
                 <li class="nav-item"><a class="nav-link subtext-style" href="{% url 'blogs:foro' %}">Foro</a></li>            
                 <li class="nav-item"><a class="nav-link subtext-style" href="{% url 'blogs:featured' %}">Destacados</a></li>
-                <li class="nav-item"><a class="nav-link subtext-style" href="{% url 'cuestionario_inicio' %}">Huella</a></li>
-
                 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle subtext-style" href="#" role="button" data-bs-toggle="dropdown"aria-expanded="false">Categorías</a>
                     <ul class="dropdown-menu">
                         {% for category in categories %}
