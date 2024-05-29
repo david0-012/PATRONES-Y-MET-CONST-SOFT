@@ -11870,3 +11870,7 @@ ul.messages li.error {
   border-radius: 4px;
 }
 
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}

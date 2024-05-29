@@ -1,0 +1,66 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block title %}Tips{% endblock %}
+
+{% block content %}
+<style>
+    /* Estilos personalizados */
+    .options {
+        margin-top: 10px; /* Espacio entre las opciones */
+        list-style-type: none; /* Quita los puntos de la lista */
+        padding-left: 0; /* Elimina el espacio de relleno izquierdo */
+    }
+
+    /* Estilos anteriores */
+    .pregunta-container {
+        background: linear-gradient(to bottom, #007bff, #28a745); /* Color de fondo para la pregunta (verde degradado) */
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        color: #fff; /* Color de texto para la pregunta */
+    }
+
+    .opcion-label {
+        color: #007bff; /* Color de texto para las opciones */
+    }
+
+    .btn-siguiente {
+        background-color: #28a745; /* Color de fondo para el botón Siguiente */
+        border-color: #28a745;
+        color: #fff; /* Color de texto para el botón Siguiente */
+        margin-top: 20px; /* Espacio entre las opciones y el botón */
+    }
+
+    /* Quita el estilo de lista */
+    ul {
+        list-style: none;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <form method="post">
+                {% csrf_token %}
+                <ul>
+                    <li class="pregunta-container">
+                        <h2 class="h4">{{ pregunta.texto }}</h2>
+                    </li>
+                    <li class="options">
+                        {% for opcion in pregunta.opcion_set.all %}
+                            <input type="radio" name="opcion" id="opcion{{ opcion.id }}" value="{{ opcion.id }}" required>
+                            <label class="opcion-label" for="opcion{{ opcion.id }}">{{ opcion.texto }}</label><br>
+                        {% endfor %}
+                    </li>
+                    <li>
+                        <button type="submit" class="btn btn-primary btn-siguiente">Siguiente</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

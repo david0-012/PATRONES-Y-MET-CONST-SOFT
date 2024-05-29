@@ -34,6 +34,7 @@ urlpatterns = [
     path("", include('aplicaciones.blogs.urls')),
     path("", include('aplicaciones.reportes.urls')),
     path("", include('aplicaciones.users.urls')),
+    path("", include('aplicaciones.calculadora_huella.urls')),
     
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
